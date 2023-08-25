@@ -1,0 +1,20 @@
+Cocker Spaniel
+Springer Spaniel
+Cavalier King Charles Spaniel
+Labrador Retriever
+German Shepherd
+Poodle
+Chihuahua
+Golden Retriever
+Yorkshire Terrier
+Dachschund
+Beagle
+Boxer
+Mini Schnauzer
+Shih Tzu
+English Bulldog
+French Bulldog
+Pug
+Rottweiler
+German Shorthaired Pointer
+Border Collie

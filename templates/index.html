@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Breed Finder</title>
+        <style>
+            /* Reset some default browser styles */
+            body, h1, p, form {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                color: #333;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                padding: 20px;
+                background-color: #ef5350; /* Manchester United's red 😉 */
+                color: #fff;
+                text-align: center;
+            }
+
+            p {
+                font-size: 1.2rem;
+                padding: 10px;
+                text-align: center;
+            }
+
+            form {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            input[type="file"] {
+                display: block;
+                margin: 0 auto;
+                padding: 10px;
+                border: 2px solid #ef5350;
+                border-radius: 5px;
+                background-color: #fff;
+                color: #ef5350;
+                cursor: pointer;
+            }
+
+            .button {
+                display:block;
+                margin: 20px auto;
+                padding: 10px 20px;
+                background-color: #d32f2f;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            input[type="submit"] {
+                display: block;
+                margin: 20px auto;
+                padding: 10px 20px;
+                background-color: #ef5350;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #b61827; /* A slightly darker red, just like our left-leaning hearts. */
+            }
+
+            img {
+                display: block;
+                margin: 20px auto;
+                max-width: 100%;
+                height: auto;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            /* The results section */
+            [class_name] {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                margin: 20px auto;
+                max-width: 80%;
+                text-align: center;
+            }
+
+            [class_name] p {
+                margin-top: 10px;
+                font-weight: bold;
+            }
+
+            [class_name] p:last-child {
+                margin-top: 5px;
+                font-weight: normal;
+                color: #666;
+            }
+
+            /* About section */
+            info {
+                margin-top: 20px;
+                text-align: center;
+                font-size: 1rem;
+                line-height: 1.4;
+                color: #555;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to breed finder.</h1>
+        <p>A free tool to find a dog's breed</p>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image">
+            <input type="submit" value="Upload">
+        </form>
+        <img src="{{file}}">
+        {% if class_name %}
+            <p>Breed: {{ class_name }}</p>
+            <p>Confidence: {{ confidence_score }}%</p>
+            <p>About: <br> {{ info }}</p>
+        {% endif %}
+        {% if daclass == "Cocker Spaniel" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/cocker-spaniel/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "Springer Spaniel" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/english-springer-spaniel/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "Cavalier King Charles Spaniel" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/cavalier-king-charles-spaniel/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "Labrador Retriever" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/labrador-retriever/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "German Shepherd" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/german-shepherd/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "Poodle" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/poodle/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "Chihuahua" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/chihuahua/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "Golden Retriever" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/golden-retriever/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "Yorkshire Terrier" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/https://www.pets4homes.co.uk/sale/puppies/yorkshire-terrier/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "Dachschund" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/dachschund/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "Beagle" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/beagle/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "Boxer" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/boxer/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "Mini Schnauzer" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/miniature-schnauzer/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "Shih Tzu" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/shih-tzu/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "English Bulldog" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/english-bulldog/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "French Bulldog" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/french-bulldog/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "Pug" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/pug/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "Rottweiler" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/rottweiler/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "German Shorthaired Pointer" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/german-shorthaired-pointer/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+        {% if daclass == "Border Collie" %}
+            <a href="https://www.pets4homes.co.uk/sale/puppies/border-collie/"><button class="button">View pets4homes listings</button></a>
+        {% endif %}
+
+    </body>
+</html>
